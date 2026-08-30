@@ -29,10 +29,12 @@
             width: 100%;
             aspect-ratio: 16 / 9;
             background: #222;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
+        }
+
+        .video iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
 
         h2 {
@@ -50,12 +52,20 @@
     <h1>Mi canal</h1>
 
     <div class="video">
-        Aquí irá el vídeo
+        <iframe
+            src="https://player.vimeo.com/video/1222503329?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="Star Ocean es un juego sobre arte">
+        </iframe>
     </div>
 
-    <h2>Primer vídeo</h2>
+    <h2>Star Ocean es un juego sobre arte</h2>
 
 </main>
+
+<script src="https://player.vimeo.com/api/player.js"></script>
 
 </body>
 </html>
