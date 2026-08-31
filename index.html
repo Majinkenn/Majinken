@@ -17,9 +17,6 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 60px 25px;
-            display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
         }
 
         h1 {
@@ -28,8 +25,14 @@
             margin-bottom: 50px;
         }
 
+        .programas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
         .programa {
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
 
         .video {
@@ -47,7 +50,7 @@
         h2 {
             font-size: 22px;
             font-weight: normal;
-            margin-top: 25px;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -58,39 +61,43 @@
 
     <h1>La biblioteca de Majinken</h1>
 
-    <div class="programa">
+    <div class="programas">
 
-        <div class="video">
-            <iframe
-                src="https://www.youtube-nocookie.com/embed/ZdLKa_yeFFc?si=ooqJNAUUdFWN8EZs"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen>
-            </iframe>
+        <div class="programa">
+
+            <div class="video">
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/ZdLKa_yeFFc?si=ooqJNAUUdFWN8EZs"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <h2>Tales of: Una retrospectiva de ocho horas</h2>
+
         </div>
 
-        <h2>Tales of: Una retrospectiva de ocho horas</h2>
+        <div class="programa">
+
+            <div class="video">
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/3rcvphouNhw?si=WhgEZFcuYwJuke_l"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <h2>El pintoresco mundo de los Tales of secundarios</h2>
+
+        </div>
 
     </div>
-    <div class="programa">
-
-    <div class="video">
-        <iframe
-            src="https://www.youtube-nocookie.com/embed/3rcvphouNhw?si=WhgEZFcuYwJuke_l"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-        </iframe>
-    </div>
-
-    <h2>El pintoresco mundo de los Tales of secundarios</h2>
-
-</div>
-
 
 </main>
 
