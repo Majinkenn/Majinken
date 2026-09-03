@@ -1,3 +1,10 @@
+Sí. Vamos a probarlo de forma más sólida. He mantenido tus vídeos y textos, pero he añadido dos cosas importantes:
+
+    Cada sección tiene ahora un contenedor propio (.categoria), para aislar completamente su cuadrícula.
+    He añadido min-width: 0 y overflow: hidden para impedir que un iframe pueda alterar el ancho de la página.
+
+El nuevo vídeo de Tales of sigue siendo el último de esa sección. El vídeo problemático de Anime no está incluido.
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -32,6 +39,12 @@
             margin-bottom: 50px;
         }
 
+        .categoria {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
         .seccion {
             font-size: 28px;
             font-weight: normal;
@@ -41,11 +54,13 @@
 
         .programas {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 30px;
+            width: 100%;
         }
 
         .programa {
+            min-width: 0;
             margin-bottom: 10px;
         }
 
@@ -53,9 +68,11 @@
             width: 100%;
             aspect-ratio: 16 / 9;
             background: #222;
+            overflow: hidden;
         }
 
         .video iframe {
+            display: block;
             width: 100%;
             height: 100%;
             border: 0;
@@ -76,347 +93,340 @@
     <h1>La biblioteca de Majinken</h1>
 
 
-    <h2 class="seccion">Tales of</h2>
+    <section class="categoria">
+        <h2 class="seccion">Tales of</h2>
 
-    <div class="programas">
+        <div class="programas">
 
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/ZdLKa_yeFFc?si=ooqJNAUUdFWN8EZs"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/ZdLKa_yeFFc?si=ooqJNAUUdFWN8EZs"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>Tales of: Una retrospectiva de ocho horas</h2>
             </div>
-            <h2>Tales of: Una retrospectiva de ocho horas</h2>
-        </div>
 
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/3rcvphouNhw?si=WhgEZFcuYwJuke_l"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/3rcvphouNhw?si=WhgEZFcuYwJuke_l"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>El pintoresco mundo de los Tales of secundarios</h2>
             </div>
-            <h2>El pintoresco mundo de los Tales of secundarios</h2>
-        </div>
 
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/7nXhiK9EFvI?si=gWexl6jLctBDErJT"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/7nXhiK9EFvI?si=gWexl6jLctBDErJT"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>Las extravagancias de la saga Tales of</h2>
             </div>
-            <h2>Las extravagancias de la saga Tales of</h2>
-        </div>
 
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/49BD9MzbNuo?si=LJV7EA9AO4LgyYeY"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/49BD9MzbNuo?si=LJV7EA9AO4LgyYeY"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>El dantesco mundo de los Tales of para móvil</h2>
             </div>
-            <h2>El dantesco mundo de los Tales of para móvil</h2>
-        </div>
 
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/9hAoQDGPXQ8?si=qqD7DrO7rxWUtZjZ"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/9hAoQDGPXQ8?si=qqD7DrO7rxWUtZjZ"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>Análisis: Tales of Rebirth</h2>
             </div>
-            <h2>Análisis: Tales of Rebirth</h2>
-        </div>
 
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/CVG_U75AalI?si=EGGIW7LVG9NFLbiY"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/CVG_U75AalI?si=EGGIW7LVG9NFLbiY"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>El lamentable estado de Tales of en Occidente</h2>
             </div>
-            <h2>El lamentable estado de Tales of en Occidente</h2>
-        </div>
 
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/Grt2bn74hwc?si=UlsxzU0z_xsWrspx"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/Grt2bn74hwc?si=UlsxzU0z_xsWrspx"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>Las carátulas de Tales of</h2>
             </div>
-            <h2>Las carátulas de Tales of</h2>
-        </div>
 
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/2FJYIL_NH8M"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/2FJYIL_NH8M"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>Nuevo vídeo de Tales of</h2>
             </div>
-            <h2>Nuevo vídeo de Tales of</h2>
+
         </div>
+    </section>
 
-    </div>
 
+    <section class="categoria">
+        <h2 class="seccion">Residente Vil</h2>
 
-    <h2 class="seccion">Residente Vil</h2>
+        <div class="programas">
 
-    <div class="programas">
-
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/V65ETIg06KI"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/V65ETIg06KI"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>Retrospectiva Resident Evil Parte 1</h2>
             </div>
-            <h2>Retrospectiva Resident Evil Parte 1</h2>
-        </div>
 
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/X2c_j33YrvY"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/X2c_j33YrvY"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>Retrospectiva Resident Evil Parte 2: Requiem</h2>
             </div>
-            <h2>Retrospectiva Resident Evil Parte 2: Requiem</h2>
+
         </div>
+    </section>
 
-    </div>
 
+    <section class="categoria">
+        <h2 class="seccion">Final Fantasy y Kingdom Hearts</h2>
 
-    <h2 class="seccion">Final Fantasy y Kingdom Hearts</h2>
+        <div class="programas">
 
-    <div class="programas">
-
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/TAoqns6B5wc"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/TAoqns6B5wc"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>Final Fantasy XV una década después</h2>
             </div>
-            <h2>Final Fantasy XV una década después</h2>
-        </div>
 
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/38fS8nXWh_E"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/38fS8nXWh_E"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>En defensa de Final Fantasy X-2</h2>
             </div>
-            <h2>En defensa de Final Fantasy X-2</h2>
-        </div>
 
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/WsCuAXHDdN8?si=4hFkvh4l6BwX_CGY"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/WsCuAXHDdN8?si=4hFkvh4l6BwX_CGY"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>Kingdom Hearts I y II son una narrativa completa</h2>
             </div>
-            <h2>Kingdom Hearts I y II son una narrativa completa</h2>
+
         </div>
+    </section>
 
-    </div>
 
+    <section class="categoria">
+        <h2 class="seccion">Dragon Ball</h2>
 
-    <h2 class="seccion">Dragon Ball</h2>
+        <div class="programas">
 
-    <div class="programas">
-
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/DIhomUTH0oo"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/DIhomUTH0oo"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>Análisis: Dragon Ball Sparking! Zero</h2>
             </div>
-            <h2>Análisis: Dragon Ball Sparking! Zero</h2>
-        </div>
 
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/cxdl7C5ucJE"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/cxdl7C5ucJE"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>Impresiones: Dragon Ball Sparking! Zero - Super Limit-Breaking Neo DLC</h2>
             </div>
-            <h2>Impresiones: Dragon Ball Sparking! Zero - Super Limit-Breaking Neo DLC</h2>
-        </div>
 
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/q3AQSEePBog"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/q3AQSEePBog"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>Retrospectiva: Dragon Ball Z - Plan para erradicar a los Saiyans</h2>
             </div>
-            <h2>Retrospectiva: Dragon Ball Z - Plan para erradicar a los Saiyans</h2>
+
         </div>
+    </section>
 
-    </div>
 
+    <section class="categoria">
+        <h2 class="seccion">Anime</h2>
 
-    <h2 class="seccion">Anime</h2>
+        <div class="programas">
 
-    <div class="programas">
-
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/WrmHFd-Y0_M"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/WrmHFd-Y0_M"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>Shakugan no Shana es mi anime favorito</h2>
             </div>
-            <h2>Shakugan no Shana es mi anime favorito</h2>
+
         </div>
+    </section>
 
-    </div>
 
+    <section class="categoria">
+        <h2 class="seccion">Cine y Televisión</h2>
 
-    <h2 class="seccion">Cine y Televisión</h2>
+        <div class="programas">
 
-    <div class="programas">
-
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/kLQtqB4t64E"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/kLQtqB4t64E"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>La impresionante carrera de Andrew Garfield</h2>
             </div>
-            <h2>La impresionante carrera de Andrew Garfield</h2>
-        </div>
 
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/0FV8rFa3-us"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/0FV8rFa3-us"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>Lost sí resolvió sus misterios</h2>
             </div>
-            <h2>Lost sí resolvió sus misterios</h2>
+
         </div>
+    </section>
 
-    </div>
 
+    <section class="categoria">
+        <h2 class="seccion">Otros</h2>
 
-    <h2 class="seccion">Otros</h2>
+        <div class="programas">
 
-    <div class="programas">
-
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/tbMo_vxDfnA"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/tbMo_vxDfnA"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>Firewatch es sorprendentemente bueno</h2>
             </div>
-            <h2>Firewatch es sorprendentemente bueno</h2>
-        </div>
 
-        <div class="programa">
-            <div class="video">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/LqhHSLo-E8c"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen>
-                </iframe>
+            <div class="programa">
+                <div class="video">
+                    <iframe
+                        src="https://www.youtube-nocookie.com/embed/LqhHSLo-E8c"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <h2>Star Ocean: Till the end of time es un juego sobre arte</h2>
             </div>
-            <h2>Star Ocean: Till the end of time es un juego sobre arte</h2>
-        </div>
 
-    </div>
+        </div>
+    </section>
 
 </main>
 
